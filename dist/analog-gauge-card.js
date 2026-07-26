@@ -1,4 +1,4 @@
-const ANALOG_GAUGE_V4_VERSION = "4.1.2";
+const ANALOG_GAUGE_V4_VERSION = "4.1.3";
 const ANALOG_GAUGE_V4_ASSET_BASE = new URL("./assets/", import.meta.url);
 
 class AnalogGaugeCard extends HTMLElement {
@@ -615,12 +615,13 @@ if (!window.customCards.some((card) => card.type === "analog-gauge-card")) {
     type: "analog-gauge-card",
     name: "Analog Gauge Card",
     description: "Photorealistic configurable analog gauge with animated needle and mechanically matched gears",
-    preview: true
+    preview: true,
+    documentationURL: "https://github.com/loungelizard2018/analog-gauge-card"
   });
 }
 
 console.info(
-  "%c ANALOG-GAUGE-CARD %c 4.1.2 ",
+  "%c ANALOG-GAUGE-CARD %c 4.1.3 ",
   "color:white;background:#111;padding:4px 8px;border-radius:4px 0 0 4px",
   "color:#111;background:#ddd;padding:4px 8px;border-radius:0 4px 4px 0"
 );

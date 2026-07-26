@@ -2,7 +2,11 @@
 
 A photorealistic, reusable analog gauge for Home Assistant dashboards with a moving needle, animated mechanically matched gears, configurable scale geometry, value labels and coloured operating zones.
 
-![Analog Gauge Card](docs/images/preview.jpg)
+## Current Home Assistant rendering
+
+The preview below is the actual card rendered in Home Assistant with the final documented CPU-temperature configuration.
+
+![Analog Gauge Card rendered in Home Assistant](docs/images/preview.webp)
 
 ## Features
 
@@ -22,7 +26,7 @@ A photorealistic, reusable analog gauge for Home Assistant dashboards with a mov
 
 1. Open **HACS → Dashboard**.
 2. Open the three-dot menu and select **Custom repositories**.
-3. Add the repository URL.
+3. Add `https://github.com/loungelizard2018/analog-gauge-card`.
 4. Select category **Dashboard**.
 5. Install **Analog Gauge Card**.
 6. Reload Home Assistant when HACS asks you to do so.
@@ -57,9 +61,9 @@ zones:
     color: "#df4332"
 ```
 
-## Complete documented example
+## Complete documented reference card
 
-See [`examples/cpu-temperature-complete.yaml`](examples/cpu-temperature-complete.yaml). It contains the final tuned CPU-temperature layout and comments for every configuration group.
+Use [`examples/cpu-temperature-complete.yaml`](examples/cpu-temperature-complete.yaml) as the final reference configuration. It contains the exact values used for the preview and detailed comments explaining every geometry and rendering option.
 
 ## Important geometry model
 

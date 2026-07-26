@@ -1,0 +1,10 @@
+{
+  "name": "analog-gauge-card",
+  "version": "4.1.2",
+  "description": "Photorealistic analog gauge card for Home Assistant dashboards",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "check": "node --check dist/analog-gauge-card.js"
+  }
+}

@@ -5,7 +5,7 @@
 - First HACS-ready release
 - Stable `custom:analog-gauge-card` element name
 - Compatibility alias for `custom:analog-gauge-card-v412`
-- Photorealistic visual assets
+- Photorealistic embedded assets
 - Corrected needle/pivot attachment
 - Scale-label containment and endpoint inset
 - Independent dial-centred scale and needle pivot

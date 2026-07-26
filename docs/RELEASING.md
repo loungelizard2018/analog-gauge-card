@@ -3,7 +3,7 @@
 1. Ensure the HACS validation workflow is green on `main`.
 2. Create a GitHub release named `v4.1.2` from the `main` branch.
 3. Use the relevant section from `CHANGELOG.md` as the release notes.
-4. No separate binary asset is required: HACS reads the complete `dist/` directory from the release source archive.
+4. No separate binary asset is required: HACS reads `dist/analog-gauge-card.js` from the release source archive.
 
 For subsequent versions:
 

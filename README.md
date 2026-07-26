@@ -2,6 +2,8 @@
 
 A photorealistic, reusable analog gauge for Home Assistant dashboards with a moving needle, animated mechanically matched gears, configurable scale geometry, value labels and coloured operating zones.
 
+![Analog Gauge Card](docs/images/preview.jpg)
+
 ## Features
 
 - Photorealistic black instrument housing, screws, glass, dial and mechanical section
@@ -10,17 +12,17 @@ A photorealistic, reusable analog gauge for Home Assistant dashboards with a mov
 - Scale centred independently from the needle pivot
 - Configurable range, ticks, labels, title, subtitle and unit
 - Automatic value relocation when the needle would cover the number
-- Unit follows the relocated value
+- Unit can follow the relocated value
 - Automatic scale fitting inside the white dial
 - Configurable colour zones
 - Responsive rendering for desktop, tablet and mobile dashboards
-- Single standalone JavaScript file with all visual assets embedded
+- Photorealistic visual assets are installed together with the JavaScript file under `dist/assets/`
 
 ## Installation with HACS
 
 1. Open **HACS → Dashboard**.
 2. Open the three-dot menu and select **Custom repositories**.
-3. Add `https://github.com/loungelizard2018/analog-gauge-card`.
+3. Add the repository URL.
 4. Select category **Dashboard**.
 5. Install **Analog Gauge Card**.
 6. Reload Home Assistant when HACS asks you to do so.
@@ -29,8 +31,8 @@ HACS downloads `dist/analog-gauge-card.js` and normally registers the dashboard 
 
 ## Manual installation
 
-1. Copy `dist/analog-gauge-card.js` to `/config/www/analog-gauge-card.js`.
-2. Add `/local/analog-gauge-card.js` as a **JavaScript Module** under **Settings → Dashboards → Resources**.
+1. Copy the complete contents of `dist/` to `/config/www/analog-gauge-card/`.
+2. Add `/local/analog-gauge-card/analog-gauge-card.js` as a **JavaScript Module** under **Settings → Dashboards → Resources**.
 3. Reload the browser without cache.
 
 ## Minimal example
@@ -57,9 +59,9 @@ zones:
 
 ## Complete documented example
 
-See [`examples/cpu-temperature-complete.yaml`](examples/cpu-temperature-complete.yaml). It contains the final tuned CPU-temperature layout and detailed comments for every configuration group.
+See [`examples/cpu-temperature-complete.yaml`](examples/cpu-temperature-complete.yaml). It contains the final tuned CPU-temperature layout and comments for every configuration group.
 
-## Geometry model
+## Important geometry model
 
 The scale and the needle use separate centres:
 
@@ -77,14 +79,14 @@ The scale and the needle use separate centres:
 | `unit` | entity unit | Display unit |
 | `title`, `subtitle` | empty / `CLASS 2.5` | Dial legends |
 | `decimals` | `0` | Value decimals |
-| `major_ticks` | `6` | Number of labelled marks including endpoints |
+| `major_ticks` | `6` | Number of labelled scale marks including endpoints |
 | `minor_ticks` | `4` | Small marks between major ticks |
 | `pivot_x`, `pivot_y` | `512`, `700` | Needle rotation point |
 | `scale_center_x`, `scale_center_y` | `512`, `500` | Independent scale centre |
 | `scale_radius` | `350` | Requested scale radius |
 | `scale_start_angle`, `scale_end_angle` | `-100`, `100` | Scale angular span |
 | `scale_fit` | `auto` | Keep the complete scale inside the dial |
-| `dial_center_x`, `dial_center_y`, `dial_radius` | `512`, `500`, `400` | White dial geometry |
+| `dial_center_x`, `dial_center_y`, `dial_radius` | `512`, `500`, `400` | Physical white dial geometry |
 | `dial_margin` | `14` | Safety margin from dial edge |
 | `zone_width` | `24` | Coloured arc width |
 | `major_tick_length`, `minor_tick_length` | `54`, `32` | Tick lengths |
@@ -108,19 +110,19 @@ The scale and the needle use separate centres:
 
 ## Updating from the pre-HACS V4.1.2 file
 
-New HACS installations should use:
+The HACS package uses the stable type:
 
 ```yaml
 type: custom:analog-gauge-card
 ```
 
-The compatibility alias remains available:
+For migration convenience, the JavaScript also provides the old alias:
 
 ```yaml
 type: custom:analog-gauge-card-v412
 ```
 
-Remove old manually configured V4.x resources after HACS has registered the new resource. Keeping multiple old gauge resources loaded can cause confusing browser caches.
+Remove old manually configured V4.x dashboard resources after HACS has registered the new resource. Keeping several old gauge resources loaded can cause unnecessary downloads and confusing browser caches.
 
 ## Development check
 

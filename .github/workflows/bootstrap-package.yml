@@ -17,25 +17,16 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Assemble JavaScript and visual assets
+      - name: Assemble standalone JavaScript
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p dist/assets docs/images
-          cat .bootstrap/js/* > dist/analog-gauge-card.js
-          cat .bootstrap/assets/base.webp/* | base64 --decode > dist/assets/base.webp
-          cat .bootstrap/assets/glass.webp/* | base64 --decode > dist/assets/glass.webp
-          cat .bootstrap/assets/needle.webp/* | base64 --decode > dist/assets/needle.webp
-          cat .bootstrap/assets/pivot.webp/* | base64 --decode > dist/assets/pivot.webp
-          cat .bootstrap/assets/gear-left.webp/* | base64 --decode > dist/assets/gear-left.webp
-          cat .bootstrap/assets/gear-center.webp/* | base64 --decode > dist/assets/gear-center.webp
-          cat .bootstrap/assets/gear-right.webp/* | base64 --decode > dist/assets/gear-right.webp
-          cat .bootstrap/assets/preview.jpg/* | base64 --decode > docs/images/preview.jpg
+          mkdir -p dist
+          cat .bootstrap/embedded/* > dist/analog-gauge-card.js
           node --check dist/analog-gauge-card.js
-          test -s dist/assets/base.webp
-          test -s docs/images/preview.jpg
+          test -s dist/analog-gauge-card.js
 
-      - name: Commit assembled package
+      - name: Commit assembled HACS package
         shell: bash
         run: |
           set -euo pipefail
@@ -44,5 +35,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Publish HACS package assets"
+          git commit -m "Publish HACS package"
           git push

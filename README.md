@@ -1,6 +1,21 @@
 # Analog Gauge Card
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brand/dark_logo.svg">
+  <img alt="Analog Gauge Card" src="brand/logo.svg" width="900">
+</picture>
+
 A photorealistic, reusable analog gauge for Home Assistant dashboards with a moving needle, animated mechanically matched gears, configurable scale geometry, value labels and coloured operating zones.
+
+## Project branding
+
+This repository contains project-specific brand assets under [`brand/`](brand/):
+
+- `icon.svg`
+- `logo.svg`
+- `dark_logo.svg`
+
+Analog Gauge Card is a **Home Assistant Dashboard plugin (custom Lovelace card)**, not a `custom_components` integration. Therefore these files are used for the repository, documentation and project identity; Home Assistant's integration brands mechanism does not automatically attach them to a dashboard card.
 
 ## Current Home Assistant rendering
 

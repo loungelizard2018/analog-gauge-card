@@ -1,0 +1,180 @@
+# Analog Gauge Card — vollständiges, kommentiertes Beispiel
+#
+# Voraussetzung:
+#   - Installation über HACS als Dashboard/Plugin
+#   - Kartentyp: custom:analog-gauge-card
+#
+# Die unten stehenden Werte entsprechen der abgestimmten CPU-Temperaturanzeige.
+
+type: custom:analog-gauge-card
+entity: sensor.bigpool_cpu_temperature
+
+# ============================================================
+# 1) MESSBEREICH UND BESCHRIFTUNG
+# ============================================================
+# min / max definieren den technischen Messbereich.
+# Der Entity-Wert wird auf diesen Bereich begrenzt dargestellt.
+min: 0
+max: 100
+
+# unit wird neben dem Messwert dargestellt.
+# Falls unit leer bleibt, kann die Einheit aus der Entity übernommen werden.
+unit: "°C"
+
+# title / subtitle sind die beiden Beschriftungen oberhalb der Mechanik.
+title: "CPU TEMPERATURE"
+subtitle: "CLASS 2.5"
+
+# Anzahl der Nachkommastellen des großen Messwerts.
+decimals: 0
+
+# ============================================================
+# 2) SKALENTEILUNG
+# ============================================================
+# major_ticks enthält die beschrifteten Hauptmarken einschließlich min/max.
+# Bei 6 Hauptmarken und 0…100 entstehen: 0, 20, 40, 60, 80, 100.
+major_ticks: 6
+
+# minor_ticks ist die Anzahl kleiner Teilstriche zwischen zwei Hauptmarken.
+minor_ticks: 4
+
+# ============================================================
+# 3) MECHANISCHER DREHPUNKT DES ZEIGERS
+# ============================================================
+# Diese Koordinaten definieren ausschließlich die Achse des roten Zeigers.
+# Sie sind unabhängig vom Mittelpunkt der Skala.
+pivot_x: 512
+pivot_y: 700
+
+# ============================================================
+# 4) GEOMETRIE DER SKALA
+# ============================================================
+# Die Skala wird um den Mittelpunkt des weißen Zifferblatts konstruiert.
+# Dadurch folgt ihre Krümmung dem gesamten Instrument und nicht dem Pivot.
+scale_center_x: 512
+scale_center_y: 500
+
+# Radius des farbigen Skalenbogens in internen 1024×1024-Koordinaten.
+scale_radius: 350
+
+# Anfangs- und Endwinkel der Skala.
+# Negative Werte liegen links, positive rechts.
+scale_start_angle: -100
+scale_end_angle: 100
+
+# ============================================================
+# 5) AUTOMATISCHE BEGRENZUNG AUF DAS WEISSE ZIFFERBLATT
+# ============================================================
+# auto reduziert bei Bedarf den effektiven Radius, damit Skala und Zahlen
+# nicht aus dem runden weißen Bereich herauslaufen.
+scale_fit: auto
+
+# Geometrie des tatsächlich sichtbaren weißen Zifferblatts.
+dial_center_x: 512
+dial_center_y: 500
+dial_radius: 400
+
+# Sicherheitsabstand vom Rand des weißen Bereichs.
+dial_margin: 30
+
+# ============================================================
+# 6) OPTIK VON FARBBOGEN, TEILSTRICHEN UND SKALENZAHLEN
+# ============================================================
+# Breite des farbigen Bogens.
+zone_width: 24
+
+# Länge der Haupt- und Nebenteilstriche.
+major_tick_length: 54
+minor_tick_length: 32
+
+# Verschiebt die äußeren Enden der Teilstriche relativ zum Farbbogen.
+tick_outset: 10
+
+# Grundabstand der Skalenzahlen vom Bogen.
+label_offset: 38
+
+# Feinkorrektur aller Skalenzahlen entlang des Radius:
+#   positiv  = weiter nach außen
+#   negativ  = weiter nach innen
+label_radial_adjust: 4
+
+# Zusätzlicher Einzug nur für die beiden Endwerte, z. B. 0 und 100.
+# Verhindert, dass breite Endbeschriftungen den weißen Bereich verlassen.
+label_end_inset: 28
+
+# Geschätzter Platzbedarf der Schrift für die Auto-Fit-Berechnung.
+label_safety: 30
+
+# ============================================================
+# 7) ZEIGERVERHALTEN
+# ============================================================
+# touch: Die sichtbare Zeigerlänge passt sich leicht an, sodass die Spitze
+#        den gerätezentrierten Skalenbogen erreicht.
+# fixed: Feste Zeigerlänge über den gesamten Messbereich.
+needle_length_mode: touch
+
+# Wird hauptsächlich bei needle_length_mode: fixed verwendet.
+needle_length: 560
+
+# Negative Werte lassen den Zeiger knapp innerhalb des Bogens enden.
+needle_reach: -5
+
+# ============================================================
+# 8) GROSSER MESSWERT UND EINHEIT
+# ============================================================
+# auto verschiebt den Messwert auf die freie Seite, sobald der Zeiger ihn
+# überdecken würde. left / right erzwingen eine feste Seite.
+value_position: auto
+value_left_x: 385
+value_right_x: 580
+value_y: 450
+
+# relative lässt die Einheit gemeinsam mit dem Messwert die Seite wechseln.
+# absolute verwendet unit_x / unit_y als feste Position.
+unit_position: relative
+unit_x: auto
+unit_y: 430
+
+# Relative Position der Einheit zum großen Messwert.
+# Das Vorzeichen wird entsprechend der gewählten Seite gespiegelt.
+unit_offset_x: -80
+unit_offset_y: -30
+
+# ============================================================
+# 9) TITEL UND UNTERTITEL
+# ============================================================
+# Sichere Positionen oberhalb des schwarzen Mechanikgehäuses.
+title_x: 255
+subtitle_x: 770
+text_y: 590
+
+# ============================================================
+# 10) ZAHNRÄDER, ANIMATION UND KARTENGRÖSSE
+# ============================================================
+# Vertikale Position der drei sichtbaren Zahnräder.
+gear_y: 810
+
+# Anzahl der Umdrehungen des mittleren Zahnrads über den Messbereich.
+# Die benachbarten Zahnräder folgen mit den korrekten Übersetzungen.
+gear_turns: 2
+
+# Maximale Breite der Karte. Die Karte skaliert darunter responsiv.
+max_width: 720
+
+# ============================================================
+# 11) FARBZONEN
+# ============================================================
+# Beliebig viele Abschnitte sind möglich. Üblicherweise werden drei genutzt.
+# Die Bereiche sollten lückenlos innerhalb min/max liegen.
+zones:
+  - from: 0
+    to: 40
+    color: "#4caf50"       # Grün: normal
+
+  - from: 40
+    to: 70
+    color: "#f6c343"       # Gelb: erhöht
+
+  - from: 70
+    to: 100
+    color: "#df4332"       # Rot: kritisch

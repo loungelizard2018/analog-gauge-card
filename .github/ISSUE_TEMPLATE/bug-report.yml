@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a rendering or functional problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Include the Home Assistant version, browser, card YAML and a screenshot.
+  - type: input
+    id: version
+    attributes:
+      label: Card version
+      placeholder: 4.1.2
+    validations:
+      required: true
+  - type: input
+    id: home-assistant
+    attributes:
+      label: Home Assistant version
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Card YAML
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem description
+    validations:
+      required: true

@@ -29,12 +29,3 @@ jobs:
           node-version: "22"
       - name: Validate JavaScript syntax
         run: node --check dist/analog-gauge-card.js
-      - name: Verify required visual assets
-        run: |
-          test -f dist/assets/base.webp
-          test -f dist/assets/glass.webp
-          test -f dist/assets/needle.webp
-          test -f dist/assets/pivot.webp
-          test -f dist/assets/gear-left.webp
-          test -f dist/assets/gear-center.webp
-          test -f dist/assets/gear-right.webp

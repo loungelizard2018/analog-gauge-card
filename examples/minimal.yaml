@@ -1,0 +1,17 @@
+type: custom:analog-gauge-card
+entity: sensor.bigpool_cpu_temperature
+min: 0
+max: 100
+unit: "°C"
+title: "CPU TEMPERATURE"
+subtitle: "CLASS 2.5"
+zones:
+  - from: 0
+    to: 40
+    color: "#4caf50"
+  - from: 40
+    to: 70
+    color: "#f6c343"
+  - from: 70
+    to: 100
+    color: "#df4332"

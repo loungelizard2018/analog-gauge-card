@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Analog Gauge Card icon</title>
+  <desc id="desc">A black analog instrument with a white dial, coloured scale, red needle and mechanical gears.</desc>
+  <defs>
+    <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#282a2c"/><stop offset="0.55" stop-color="#111214"/><stop offset="1" stop-color="#050607"/></linearGradient>
+    <radialGradient id="dial" cx="50%" cy="38%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset="0.78" stop-color="#f1f0eb"/><stop offset="1" stop-color="#d2d0ca"/></radialGradient>
+    <linearGradient id="needle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7b0908"/><stop offset="0.45" stop-color="#d12a23"/><stop offset="0.7" stop-color="#8f100d"/><stop offset="1" stop-color="#4b0706"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffdc6b"/><stop offset="0.45" stop-color="#b26a12"/><stop offset="1" stop-color="#5b3008"/></linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.4" stop-color="#9ea2a4"/><stop offset="0.7" stop-color="#f4f4f4"/><stop offset="1" stop-color="#55595c"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/></filter>
+  </defs>
+  <rect x="8" y="8" width="496" height="496" rx="38" fill="url(#case)" stroke="#494c4e" stroke-width="5"/>
+  <rect x="22" y="22" width="468" height="468" rx="28" fill="none" stroke="#08090a" stroke-width="6"/>
+  <g fill="#0c0d0e" stroke="#606366" stroke-width="4"><circle cx="56" cy="56" r="24"/><circle cx="456" cy="56" r="24"/><circle cx="56" cy="456" r="24"/><circle cx="456" cy="456" r="24"/></g>
+  <g stroke="#b9bdc0" stroke-width="7" stroke-linecap="round"><path d="M45 45l22 22M67 45L45 67"/><path d="M445 45l22 22M467 45l-22 22"/><path d="M45 445l22 22M67 445l-22 22"/><path d="M445 445l22 22M467 445l-22 22"/></g>
+  <circle cx="256" cy="238" r="191" fill="#050607" stroke="#45484a" stroke-width="9" filter="url(#shadow)"/>
+  <circle cx="256" cy="238" r="174" fill="url(#dial)" stroke="#b9b8b2" stroke-width="4"/>
+  <path d="M116 288 A168 168 0 0 1 191 91" fill="none" stroke="#4caf50" stroke-width="18"/>
+  <path d="M191 91 A168 168 0 0 1 347 105" fill="none" stroke="#f6c343" stroke-width="18"/>
+  <path d="M347 105 A168 168 0 0 1 397 288" fill="none" stroke="#df4332" stroke-width="18"/>
+  <g stroke="#202224" stroke-linecap="round"><path d="M122 284l28-5M139 207l25 8M170 141l20 17M224 103l8 27M288 101l-5 29M350 127l-17 22M391 187l-27 10M398 269l-29-2" stroke-width="8"/><path d="M128 246l19 1M132 225l19 4M145 185l18 7M157 165l17 10M197 118l10 17M219 108l7 18M267 99l0 19M310 106l-5 18M331 115l-9 17M368 150l-15 12M382 169l-17 9M397 229l-19 2M399 250l-19 0" stroke-width="4"/></g>
+  <g fill="#242628" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="28" text-anchor="middle"><text x="105" y="310">0</text><text x="145" y="158">20</text><text x="218" y="89">40</text><text x="300" y="88">60</text><text x="372" y="159">80</text><text x="409" y="310">100</text></g>
+  <text x="256" y="237" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="62" fill="#111">41</text><text x="309" y="217" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#111">°C</text>
+  <rect x="104" y="323" width="304" height="132" rx="25" fill="#111315" stroke="#55595c" stroke-width="4"/><circle cx="256" cy="325" r="48" fill="#0a0b0c" opacity="0.9"/>
+  <g transform="translate(187 388)"><g fill="url(#gold)" stroke="#4e2b08" stroke-width="4"><circle r="39"/><path d="M0-48V-34M24-41l-7 12M41-24l-12 7M48 0H34M41 24l-12-7M24 41l-7-12M0 48V34M-24 41l7-12M-41 24l12-7M-48 0h14M-41-24l12 7M-24-41l7 12" fill="none" stroke-width="11"/></g><circle r="13" fill="#f8cf63" stroke="#5b3008" stroke-width="4"/></g>
+  <g transform="translate(256 388)"><g fill="url(#steel)" stroke="#4f5356" stroke-width="4"><circle r="45"/><path d="M0-55V-39M27-48l-8 14M48-27l-14 8M55 0H39M48 27l-14-8M27 48l-8-14M0 55V39M-27 48l8-14M-48 27l14-8M-55 0h16M-48-27l14 8M-27-48l8 14" fill="none" stroke-width="12"/></g><circle r="15" fill="#d59c2a" stroke="#4d2e08" stroke-width="4"/></g>
+  <g transform="translate(330 388)"><g fill="url(#steel)" stroke="#4f5356" stroke-width="4"><circle r="37"/><path d="M0-46V-33M23-40l-7 12M40-23l-12 7M46 0H33M40 23l-12-7M23 40l-7-12M0 46V33M-23 40l7-12M-40 23l12-7M-46 0h13M-40-23l12 7M-23-40l7 12" fill="none" stroke-width="10"/></g><circle r="12" fill="#d59c2a" stroke="#4d2e08" stroke-width="4"/></g>
+  <path d="M249 322L211 97L262 317Z" fill="url(#needle)" stroke="#6c0c09" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="256" cy="323" r="25" fill="url(#gold)" stroke="#4b2705" stroke-width="5"/><path d="M244 323h24" stroke="#4b2705" stroke-width="5" stroke-linecap="round"/>
+</svg>

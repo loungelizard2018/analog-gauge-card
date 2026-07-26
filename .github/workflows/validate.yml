@@ -1,0 +1,40 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  validate-hacs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: HACS validation
+        uses: hacs/action@main
+        with:
+          category: plugin
+
+  validate-javascript:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate JavaScript syntax
+        run: node --check dist/analog-gauge-card.js
+      - name: Verify required visual assets
+        run: |
+          test -f dist/assets/base.webp
+          test -f dist/assets/glass.webp
+          test -f dist/assets/needle.webp
+          test -f dist/assets/pivot.webp
+          test -f dist/assets/gear-left.webp
+          test -f dist/assets/gear-center.webp
+          test -f dist/assets/gear-right.webp
